@@ -118,7 +118,7 @@ public class Viewer extends JApplet implements Runnable, MouseListener, ViewerEv
         applicationSettings = new ApplicationSettings();
 	}
 
-	private Viewer(Parser parser) {
+	public Viewer(Parser parser) {
 		this();
         paramsMask = ParametersHandler.completeSettingsFromCLI(
                 parser, connectionParams, settings, uiSettings, applicationSettings);
@@ -174,7 +174,8 @@ public class Viewer extends JApplet implements Runnable, MouseListener, ViewerEv
             }
             getAppletContext().showDocument(goodbyeUrl);
         } else {
-			System.exit(0);
+            logger.warning("System.exit(0);");
+//			System.exit(0);
 		}
 	}
 
